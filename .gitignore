@@ -1,0 +1,32 @@
+# --- Copyrighted Rec Room artifacts: NEVER commit (keep local/private) ---
+# IL2CPP metadata, binaries, decompiled source, captured payloads, assets
+*.dat
+*.dll
+*.exe
+*.dmp
+*.bin
+global-metadata*
+dump.cs
+DummyDll/
+decompiled/
+metadata/
+assets/
+captures/
+bodies/
+data/            # captured response bodies (gameconfigs, avatar items, etc.)
+*.resp.*
+*.req.*
+flows.jsonl
+summary.log
+
+# --- Rust ---
+/target
+**/target
+Cargo.lock      # app is a workspace of bins/libs; keep lockfiles per-crate if desired
+
+# --- misc ---
+.DS_Store
+*.log
+.venv/
+__pycache__/
+*.pyc
