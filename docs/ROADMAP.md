@@ -1,7 +1,7 @@
 # Roadmap — one-week sprint
 
-Target: a **self-hosted, playable** 2026 Rec Room client on our own Rust backend within ~1 week,
-plus the foundation for the from-scratch Rust client (ongoing).
+Target: a **self-hosted, playable** 2026 client on our own Rust backend within ~1 week, plus the
+foundation for the from-scratch Rust client (ongoing).
 
 Each item below maps to a GitHub issue under a milestone.
 
@@ -17,20 +17,20 @@ Status: **in progress** (client already logs in and reaches the menu)
 
 ## Milestone 2 — Realtime: join a room (Days 2–4)
 Status: not started — the big one
-- Reverse the realtime transport (`live`/`tachyon`): protocol, framing, auth
-- `tachyon` Rust server: accept connection, auth with our JWT, room session create/join
+- Design our realtime transport: protocol, framing, auth
+- Our Rust realtime server: accept connection, auth with our JWT, room session create/join
 - Minimal room: spawn the local player into an empty room (Dorm)
 - **Done = client loads into a room served by us**
 
 ## Milestone 3 — Standalone deploy (Day 4)
-- hosts redirect of `*.nodeline.net` → local, with Defender exclusion handled
-- trusted leaf cert served by `rrserver` (no mitmproxy middleman)
-- one-command launch script
-- **Done = launch NodeNet → straight into our stack, no proxy**
+- Our Rust loader points the client at our local stack (`your-server.example` → local)
+- Trusted leaf cert served by our `server` (no third-party proxy in the path)
+- One-command launch script
+- **Done = launch the loader → straight into our stack, no proxy**
 
 ## Milestone 4 — Decomp/analysis foundation (Days 3–5, parallel)
-- type/method inventory for the gameplay/networking subsystems (local only)
-- document the room/realtime message types and the economy/account models
+- Type/method inventory for the gameplay/networking subsystems (local only)
+- Document our own models of the room/realtime message types and the economy/account flows
 - **Done = we can look up any system's types without re-dumping**
 
 ## Ongoing / stretch (not on the week's critical path)
@@ -41,6 +41,6 @@ Status: not started — the big one
 ---
 
 ### Reality check
-The server + a playable self-hosted client this week is realistic (we're already most of the way).
-A *complete* from-scratch Rust client is not a one-week thing — it's tracked as the ongoing track so
-it never blocks shipping the playable stack.
+The server plus a playable self-hosted client this week is realistic (we're already most of the way
+there). A *complete* from-scratch Rust client is not a one-week thing — it's tracked as the ongoing
+track so it never blocks shipping the playable stack.
